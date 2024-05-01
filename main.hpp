@@ -4,11 +4,11 @@
 
 using namespace std;
 
-
-void writeFile(string);
+// just coppied the [5 - 2] code will fix
+int writeFile(string);
 void readFile(string);
 
-void writeFile(string filename){
+int writeFile(string filename){
       int empN;
     ofstream ofs;
     int IDs;
@@ -41,10 +41,46 @@ void writeFile(string filename){
     }
 
     ofs.close();
-
+return empN;
 }
 
 void readFile(string filename){
-    //
+ifstream ifs;
+    ofstream ofs;
+    int empN;
+    int IDs;
+    string name;
+    string dept;
+    double salary;
+
+    ifs.open("employee.txt");
+    if (!ifs)
+    {
+        cout << "File Open Error\n";
+        exit(0);
+    }
+
+cout << "Please enter the number of employees: ";
+   cin >> empN; 
+
+
+
+
+
+cout << "\n ID  Name  department   salary" << endl;
+
+for (int i = 0; i < numEmployees; i++){
+
+      ifs >> IDs;
+      ifs >> name;
+      ifs >> dept;
+      ifs >> salary;
+ 
+      cout << IDs << " ";
+      cout << name << " ";
+      cout << dept << " ";
+      cout << salary << " " << endl;
+   
+}
 }
 
